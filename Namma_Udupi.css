@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Bilbo|Courgette|IM+Fell+Great+Primer:400i|Kaushan+Script|Lobster|Merriweather+Sans:700i|Niconne|Sonsie+One&display=swap');
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100vh;
+    font-family: sans-serif;
+    background: linear-gradient(45deg, skyblue, transparent);
+}
+
+.container{
+    position: relative;
+    margin: 0px auto 0;
+    width: 1200px;
+    height: 600px;  
+}
+
+header {
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    text-align: center;
+    position: fixed;
+    background: cadetblue;
+    width: 100%;
+    height: 70px;
+    z-index: 4;
+}
+.title{
+    position: relative;
+}
+.title h1{
+    color: #fff;
+    font-size: 2em;
+    position: fixed;
+    font-family:Courgette;
+    text-transform: uppercase;
+    padding: 0px 75px;
+    float:left;
+    letter-spacing: 0.1em;
+    text-shadow: 6px 3px 4px grey;
+    z-index: 3;
+}
+#about{
+    width:100%;
+    height:80vh;
+    position:relative;
+    margin-top:100px;
+}
+.details{
+    position:absolute;
+    float:left;
+    margin-top:40px;
+    width:50%;
+}
+.details p{
+    text-align: justify;
+    color: #000;
+    font-size: 18px;
+    font-family:"Merriweather Sans";
+    line-height: 1.5em;
+    word-spacing: 5px;
+    text-indent: 50px;
+}
+.entrance{
+    position:relative;
+    float:right;
+    width:45%;
+    margin-top:40px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+}
+.entrance img{
+    width:100%;
+}
+
+#places, #food{
+    margin: 0;
+    width: 100%;
+    height: 750px;
+}
+.container h1{
+    padding: 20px;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: fantasy;
+    letter-spacing: 0.1em;
+    font-family: fantasy;
+}
+.place, .dish{
+    position: relative;
+    width:calc(400px - 30px);
+    height:calc(300px - 30px);
+    float:left;
+    margin:15px;
+    overflow:hidden;
+    box-sizing: border-box;
+    background: #000;
+    box-shadow:0 5px 10px rgba(0,0,0,0.8);
+    
+}
+.place::before,
+.dish::before{
+    content:"";
+    position: absolute;
+    top:10px;
+    bottom:10px;
+    left:10px;
+    right:10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    opacity:0;
+    transition: .5s;
+    transform: scaleX(0);
+    z-index:1;
+}
+.place::after,
+.dish::after{
+    content:"";
+    position: absolute;
+    top:10px;
+    bottom:10px;
+    left:10px;
+    right:10px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    box-sizing: border-box;
+    opacity:0;
+    transition: .5s;
+    transform: scaleY(0);
+    z-index:1;
+
+}
+.place:hover::before,
+.dish:hover::before{
+    transform: scaleX(1);
+    opacity:1;
+    
+}
+.place:hover::after,
+.dish:hover::after{
+    transform: scaleY(1);
+    opacity:1;
+    
+}
+
+.place .imgBX, .dish .imgBX{
+    position: relative;
+    width:100%;
+    height:100%;
+}
+.container .place .imgBX img,
+.container .dish .imgBX img{
+    width:100%;
+    height:100%;
+    transition:0.5s;
+}
+.container .place:hover .imgBX img,
+.container .dish:hover .imgBX img{
+    opacity:.2;
+    transform:scale(1.2);
+}
+.place .content, .dish .content{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:50%;
+    transform: translateY(-50%);
+    z-index:2;
+    padding:40px;
+    box-sizing: border-box;
+}
+.place .content h2, .dish .content h2{
+    margin:0 0 10px;
+    padding-top:30px;
+    color: #fff;
+    transition:.5s;
+    text-align:center;
+    font-size:2em;
+    transform:translateY(-50px);
+    opacity:0;
+    visibility:hidden;
+}
+.place .content:hover h2,
+.dish .content:hover h2{
+    opacity:1;
+    visibility: visible;
+    transform:translateY(0px);
+    transition-delay: 0.2s;
+}
+
+
